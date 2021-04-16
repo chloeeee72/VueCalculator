@@ -1,0 +1,62 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #eee;
+
+}
+
+.calculator {
+    --button-height: 80px;
+    --button-width: 80px;
+
+    display: grid;
+    grid-template-areas: "result reslut reslut reslut"
+        "ac plus-minus percent divide"
+        "number7 number8 number9 multiply"
+        "number4 number5 number6 subtract"
+        "number1 number2 number3 add"
+        "number0 number0 dot equal";
+    grid-template-columns: repeat(4, var(--button-width));
+    grid-template-rows: repeat(6, var(--button-height));
+
+    box-shadow: -8px -8px 16px -10px rgba(255, 255, 255, 1),
+        8px 8px 16px -10px rgba(0, 0, 0, 0.15);
+    padding: 24px;
+    border-radius: 20px;
+}
+
+.calculator button {
+    margin: 8px;
+    padding: 0;
+    border: 0;
+    display: block;
+    outline: none;
+    border-radius: calc(var(--button-height)/2);
+    font-size: 24px;
+    font-family: Helvetica;
+    font-weight: normal;
+    color: #999;
+    background: linear-gradient(135deg, rgba(230, 230, 230, 1) 0%,
+            rgba(246, 246, 246, 1) 100%);
+    box-shadow: -4px -4px 10px -8px rgba(255, 255, 255, 1),
+        4px 4px 10px -8px rgba(0, 0, 0, 0.3);
+}
+
+.calculator button:active {
+    box-shadow: -4px -4px 10px -8px rgba(255, 255, 255, 1) inset,
+        4px 4px 10px -8px rgba(0, 0, 0, 0.3) inset;
+}
+
+.result {
+    /* margin-left: 280px; */
+    /* text-align: left; */
+    text-align: right;
+    width: 270px;
+    line-height: var(--button-height);
+    font-size: 48px;
+    font-family: Helvetica;
+    padding: 0 20px;
+    color: #666;
+}
